@@ -7,8 +7,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\BeritaController;
 use App\Http\Controllers\PanduanController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\File;
-
 
 
 Route::get('/', [BeritaController::class, 'home'])->name('index');
@@ -72,26 +70,7 @@ Route::get('/Pendaftaran', [DaftarController::class, 'index'])->name('daftar.ind
 // route siswa pendaftar
 Route::get('/daftar', [DaftarController::class, 'index'])->name('daftar.create');
 Route::post('/daftar', [DaftarController::class, 'store'])->name('daftar.store');
-Route::get('/cek-storage', function () {
-    $path = public_path('storage');
-    
-    if (!File::exists($path)) {
-        return '❌ Folder `public/storage` tidak ditemukan';
-    }
 
-    $files = File::allFiles($path);
-    if (empty($files)) {
-        return '📁 Folder ada tapi kosong';
-    }
-
-    $list = '<ul>';
-    foreach ($files as $file) {
-        $list .= '<li>' . $file->getRelativePathname() . '</li>';
-    }
-    $list .= '</ul>';
-
-    return '✅ public/storage ada. Isinya:<br>' . $list;
-});
 
 // login admin
 Route::prefix('admin')->group(function () {
