@@ -23,7 +23,7 @@
                     <td><?php echo e($berita->judul); ?></td>
                     <td style="max-width: 100px;">
                         <?php if($berita->gambar): ?>
-                            <img src="<?php echo e(asset('storage/' . $berita->gambar)); ?>" alt="<?php echo e($berita->judul); ?>" class="img-fluid" style="max-height: 80px;">
+                            <img src="<?php echo e(Storage::url($berita->gambar)); ?>" alt="<?php echo e($berita->judul); ?>" class="img-fluid" style="max-height: 80px;">
                         <?php else: ?>
                             <span class="text-muted">Tidak ada</span>
                         <?php endif; ?>
