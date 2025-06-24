@@ -68,8 +68,9 @@ class PanduanController extends Controller
         return redirect()->route('admin.pengumuman.index')->with('success', 'Berita berhasil diperbarui');
     }
 
-    public function destroy(Pengumuman $pengumuman)
+    public function destroy($id)
     {
+        $pengumuman = Pengumuman::findOrFail($id)
         $pengumuman->delete();
         return redirect()->route('admin.pengumuman.index')->with('success', 'Berita berhasil dihapus');
     }
