@@ -1,6 +1,10 @@
 /.phpunit.cache
 /node_modules
 /vendor
+/storage/*
+!storage/app
+!storage/app/public
+!storage/app/public/berita
 .env
 .env.backup
 .env.production
