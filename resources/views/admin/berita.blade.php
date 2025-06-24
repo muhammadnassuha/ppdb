@@ -25,7 +25,7 @@
                     <td>{{ $berita->judul }}</td>
                     <td style="max-width: 100px;">
                         @if($berita->gambar)
-                            <img src="{{ asset('storage/' . $berita->gambar) }}" alt="{{ $berita->judul }}" class="img-fluid" style="max-height: 80px;">
+                            <img src="{{ Storage::url($berita->gambar) }}" alt="{{ $berita->judul }}" class="img-fluid" style="max-height: 80px;">
                         @else
                             <span class="text-muted">Tidak ada</span>
                         @endif

@@ -4,7 +4,7 @@
         "APP_ENV": "production",
         "APP_KEY": "base64:t/c9tVnn/Ir2oQNByi1qEKKU94URxMZOCFFtG/MQLu4="
       },
-      "command": "composer install --no-dev && php artisan config:cache && php artisan migrate --force && [ -L public/storage ] || php artisan storage:link"
+      "command": "composer install --no-dev && php artisan config:cache && php artisan migrate --force && php artisan storage:link"
     },
     "start": "php artisan serve --host=0.0.0.0"
   }
