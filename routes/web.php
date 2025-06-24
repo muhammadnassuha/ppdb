@@ -101,6 +101,6 @@ Route::prefix('admin')->group(function () {
         Route::post('/storepengumuman', [PanduanController::class, 'store'])->name('admin.pengumuman.store');
          Route::put('/update_status_pengumuman/{id}', [PanduanController::class, 'update'])->name('admin.status_pengumuman.update');
          Route::put('/disable_status_pengumuman/{id}', [PanduanController::class, 'disable'])->name('admin.status_pengumuman.disable');
-        Route::delete('/hapuspengumuman', [PanduanController::class, 'destroy'])->name('admin.pengumuman.destroy');
+        Route::delete('/hapuspengumuman/{id}', [PanduanController::class, 'destroy'])->name('admin.pengumuman.destroy');
     });
 });

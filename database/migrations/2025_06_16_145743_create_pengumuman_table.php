@@ -12,7 +12,7 @@ return new class extends Migration
     Schema::create('pengumuman', function (Blueprint $table) {
         $table->id();
         $table->text('isi');
-        $table->string('status');
+        $table->string('status')->nullable();
         $table->timestamps();
     });
 }
