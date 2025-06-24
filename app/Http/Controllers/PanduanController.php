@@ -70,7 +70,7 @@ class PanduanController extends Controller
 
     public function destroy($id)
     {
-        $pengumuman = Pengumuman::findOrFail($id)
+        $pengumuman = Pengumuman::findOrFail($id);
         $pengumuman->delete();
         return redirect()->route('admin.pengumuman.index')->with('success', 'Berita berhasil dihapus');
     }
